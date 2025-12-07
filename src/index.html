@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
+  <title>Cocina tradicional</title>
+</head>
+
+<body>
+  <include src="./views/header.html"></include> 
+
+  <main class="main-grid poster-wrapper"> 
+    
+    <h1 class="uoc-title title-overlay">Jornadas de cocina tradicional</h1>
+    
+    <div class="poster-wrapper__column"> 
+      <div class="poster-wrapper__content"> 
+        
+        <p class="poster-wrapper__description text-center">
+          Descubre las actividades, charlas y talleres de nuestras Jornadas de cocina tradicional. Aprende, conecta y
+          disfruta de un programa completo para todos los participantes.
+        </p>
+
+        <section class="poster-grid m-4">
+          <div class="poster-grid__item">Charlas Magistrales</div>
+          <div class="poster-grid__item">Talleres Prácticos</div>
+          <div class="poster-grid__item">Encuentro de Expositores</div>
+          <div class="poster-grid__item">Rutas Gastronómicas</div>
+          <div class="poster-grid__item">Demostraciones en Vivo</div>
+        </section>
+        
+      </div>
     </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+
+    <div class="side-column">
+      <div class="side-column__content">
+        <p>Sumérgete en un viaje culinario a través de nuestras Jornadas de Cocina Tradicional, donde honramos el legado
+          de los sabores ancestrales. Descubre las técnicas, ingredientes y relatos detrás de los platos que definen
+          nuestra cultura e historia gastronómica. Conecta con expertos, chefs y entusiastas, y redescubre el valor
+          incalculable de la tradición en cada bocado.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <include src="./views/footer.html"></include>
+  <script type="module" src="./assets/scripts/main.js"></script>
+</body>
+
 </html>

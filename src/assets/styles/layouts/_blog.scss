@@ -1,0 +1,69 @@
+@use "../variables";
+
+@layer layout {
+    .blog-page__container {
+        max-width: 800px; 
+        color: #333; 
+        container-type: inline-size; 
+    }
+}
+
+@layer pages {
+    .blog-article :is(h3, p):first-of-type {
+        font-style: italic;
+        color: #000;
+    }
+
+    .blog-article__section:has(.blog-article__list) {
+        border: 1px solid #ddd;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: #f9f9f9;
+    }
+
+    .blog-article__figure.float-start:has(img) {
+        max-width: 300px; 
+    }
+
+
+    .blog-article__quote {
+        border-left-color: variables.$uoc-corporate !important; 
+        background-color: variables.$uoc-masterbrand; 
+        padding: 1.5rem;
+        border-radius: 0 0.5rem 0.5rem 0; 
+    }
+
+    .blog-article__list {
+        & li::before {
+            content: "🔪"; 
+            margin-right: 0.5rem;
+            color: variables.$uoc-corporate;
+        }
+    }
+
+    .blog-article__figure {
+        &.w-100 {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    .blog-article__image {
+        width: 100%;
+        height: auto;
+    }
+    
+    
+    @container (max-width: 600px) {
+        .blog-article__figure.float-start {
+            float: none !important; 
+            max-width: 100%;
+            margin: 1rem 0 !important; 
+        }
+        
+        .blog-article__quote {
+            padding: 1rem;
+            margin: 2rem 0 !important;
+        }
+    }
+}

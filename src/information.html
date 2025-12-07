@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
+    <title>Información General</title>
+</head>
+
+<body>
+    <include src="./views/header.html"></include>
+
+    <main class="info-page py-5">
+        <div class="container info-page__container">
+            
+            <header class="info-header text-center mb-5">
+                <h1 class="info-header__title">Detalles y Localización</h1>
+                <p class="info-header__subtitle lead text-muted">Fechas, lugar y cómo llegar a nuestras Jornadas de Cocina Tradicional.</p>
+            </header>
+            
+            <section class="info-section mb-5">
+                
+                <div class="info-section__data">
+                    
+                    <div class="info-section__card">
+                        <h3 class="info-section__card-title">Fechas del Evento</h3>
+                        <p class="info-section__card-text">Del 15 al 18 de Noviembre de 2026</p>
+                    </div>
+
+                    <div class="info-section__card">
+                        <h3 class="info-section__card-title">Lugar</h3>
+                        <p class="info-section__card-text">Centro Cultural La Harinera, Zaragoza</p>
+                    </div>
+
+                    <div class="info-section__card">
+                        <h3 class="info-section__card-title">Horario</h3>
+                        <p class="info-section__card-text">9:00h a 18:00h (Talleres y ponencias)</p>
+                    </div>
+
+                    <div class="info-section__card" x-data="{ showPhone: false }">
+                        <h3 class="info-section__card-title">Contacto</h3>
+                        
+                        <p class="info-section__card-text" x-show="!showPhone">
+                            info@cocinatradicional.com
+                        </p>
+                        <p class="info-section__card-text" x-show="showPhone">
+                            +34 976 123 456
+                        </p>
+                        
+                        <button class="btn btn-sm btn-outline-secondary mt-2" 
+                                @click="showPhone = !showPhone">
+                            <span x-show="!showPhone">Mostrar Teléfono</span>
+                            <span x-show="showPhone">Mostrar Email</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="info-section__map mt-5">
+                    <h2>Encuéntranos aquí:</h2>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.9833843925417!2d-0.8830794236891524!3d41.634490580631144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd59151c48e9e31d%3A0x2cd9d73ea78c6d50!2sHarinera%20ZGZ!5e0!3m2!1ses!2ses!4v1765141571788!5m2!1ses!2ses" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 0.5rem;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </section>
+
+            <section class="info-travel pt-4">
+                <h2 class="info-travel__title">🚗 Cómo llegar</h2>
+                <p class="info-travel__text">El Centro Cultural La Harinera está excelentemente conectado con la red de transporte público. Recomendamos usar el tranvía (parada 'La Harinera') o las líneas de autobús L24 y L45.</p>
+        </div>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+</body>
+
+</html>

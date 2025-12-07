@@ -1,0 +1,107 @@
+.header {
+    width: 100%;
+    background-color: #303030; 
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
+    container-type: inline-size;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    &__logo {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.5rem;
+
+        i {
+            vertical-align: middle;
+        }
+    }
+
+    &__toggle {
+        border: none;
+        background: transparent;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        padding: 0;
+        cursor: pointer;
+
+        &-icon {
+            display: block;
+            height: 3px;
+            background-color: #969696;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        &.active &-icon:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        &.active &-icon:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active &-icon:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    }
+
+    &__menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem;
+
+        &.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+            z-index: 1000;
+        }
+
+        &-item {
+            margin: 0.5rem 0;
+
+            & > .header__link {
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                color: #212529;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: #212529 !important;
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
+
+    @container (max-width: 768px) {
+        &__toggle {
+            display: flex;
+        }
+
+        &__menu {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+}
